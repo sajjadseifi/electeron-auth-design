@@ -1,0 +1,290 @@
+/* font face */
+@font-face {
+   font-family : Fira;   
+   src:url("../assets/font/FiraCode-Bold.ttf")
+}
+/* reset css */
+body{
+   margin      : 0;
+   padding     : 0;
+   /* font-family : 'Fira Code';    */
+   font-family : Fira;   
+   font-weight : bold;
+   
+}
+ul{
+   margin     : 0;
+   padding    : 0;
+   list-style : none;
+}
+*{
+   outline    : 0;
+}
+/* app css */
+#root{
+   position : fixed;
+   width    : 100%;
+   height   : 100%;
+   left     : 0;
+   top      : 0;
+   display  : flex;
+}
+
+.panel{
+   width            :30%;
+   height           :100%;
+   background-color : #000000;
+   background-image : linear-gradient(147deg, #111111 0%, #212121 74%);
+   display          :flex;
+   align-items      :center;
+   justify-content  :center;
+}
+
+.content{
+   flex     : 1;
+   position : relative;
+}
+
+.panel-sidebar{
+   color : white;
+   width : 100%;
+}
+
+.panel-sidebar .panel-sidebar-item{
+   transition : 0.5s;
+   padding    : 10px 30px;
+   background : #ffffff00;
+   cursor     : pointer;
+}  
+.panel-sidebar .panel-sidebar-item[active]{
+   background : #ffffff22;
+}
+
+.panel-sidebar .panel-sidebar-item:hover{
+   background : #ffffff44;
+}  
+
+.auth-pages{
+   position        :absolute;
+   width           : 100%;
+   height          : 100%;
+   left            : 0;
+   top             : 0;
+   display         : flex;
+   align-items     : center;
+   justify-content : center;
+}
+
+.f-group{
+   position : relative;
+}
+
+.f-group .f-input{
+   transition    : 0.2s;
+   width         : 360px;
+   height        : 40px;
+   border        : 0 none;
+   background    : #ddd;
+   padding       : 0 30px;
+   box-sizing    : border-box;   
+   border-radius : 2px;
+   opacity       : 0.7;
+}
+
+.f-group .f-input:focus{
+   opacity : 1;
+}
+
+.f-group .f-input::placeholder{
+   color:#00000000;
+}
+.f-group .f-title{
+   transition : 0.2s;
+   position   : absolute;
+   left       : 20px;
+   top        : 50%;
+   transform  : translateY(-50%) ;
+   color      : #888;
+}
+
+.f-input:focus + label,
+.f-group .f-input:not(:placeholder-shown) + label
+{
+   top        : 0;
+   transform  : translateY(-100%) ;
+   color      : #444;
+}
+
+.f-group .f-input ~ .side-line{
+   top                      : 50%;
+   left                     : 0;
+   display                  : block;
+   opacity                  : 0;
+   position                 : absolute;
+   transform                : translateY(-50%) translateX(-100%);
+   font-size                : 20px;
+   transition               : 0.2s;
+   background               : -webkit-linear-gradient(#00b865,#0090b8);
+   -webkit-background-clip  : text;
+   -webkit-text-fill-color  : transparent;
+}
+.f-group .f-input:focus ~ .side-line
+/* ,.f-group .f-input:not(:placeholder-shown) ~ .side-line */
+{
+  opacity:1;
+   left     : -5px;
+}
+
+.top-box .title-form{
+   text-align : center;  
+   margin-bottom:40px; 
+}
+.form-button{
+   color         : #444;
+   width         : 260px;
+   height        : 50px;
+   border        : 0 none;
+   display       : block;
+   transition    : 0.2s;
+   text-align    : center;
+   background    : #ddd;
+   box-shadow    : 0 4px  5px 1px #11111133 ;
+   line-height   : 50px; 
+   border-radius : 2em;
+}
+.form-button:hover{
+   color         : black;
+   box-shadow    : 0 3px  3px 1px #11111155 ;
+}
+.form-button:active{
+   box-shadow    : 0 4px  8px 1px #11111155 ;
+}
+.bottom-box .form-button{
+   margin : 20px auto 0;
+}
+.auth-pages .f-group{
+   margin : 30px 0;
+}
+.auth-pages > *{
+   animation : 1s PageAnim;
+}
+@keyframes PageAnim{
+   0%{
+      opacity   : 0;
+      transform : translateY(30px)
+   }
+   100%{
+      opacity   : 1;
+      transform : translateY(0)
+   }
+}
+/*  */
+.auth-pages[component=home] .title-form{
+   color : #4432a8;
+}
+/*  */
+.auth-pages[component=login] .title-form{
+   color : #7332a8;
+}
+.auth-pages[component=login] .form-button{
+   background : #7332a8;
+   color      : white;
+}
+/*  */
+.auth-pages[component=sign-up] .title-form{
+   color : #eb1540;
+}
+.auth-pages[component=sign-up] .form-button{
+   background : #eb1540;
+   color      : white;
+}
+/*  */
+.auth-pages[component=forget-password] .title-form{
+   color : #03d5ff;
+}
+.auth-pages[component=forget-password] .form-button{
+   background : #03d5ff;
+   color      : white;
+}
+
+
+
+
+
+
+
+
+/*  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#welcome-sec,
+#content {
+  float: left;
+  width: 100%;
+  height: 100vh;
+}
+
+#welcome-sec {
+  position: relative;
+  background: sandybrown;
+  display: grid;
+  place-items: center;
+  -webkit-place-items: center;
+}
+
+#welcome-sec .scroll-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.scroll-btn a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  transform: rotateZ(90deg);
+}
+
+.scroll-btn a span {
+  float: left;
+  animation: colors 1.5s infinite;
+}
+
+.scroll-btn a span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.scroll-btn a span:nth-child(2) {
+  animation-delay: 0.33s;
+}
+
+.scroll-btn a span:nth-child(3) {
+  animation-delay: 0.66s;
+}
+
+@keyframes colors {
+  0%,
+  40%,
+  100% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+}
